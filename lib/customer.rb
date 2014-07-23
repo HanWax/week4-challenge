@@ -38,14 +38,11 @@ class Customer
 	end 
 
 	def checkout
+		raise 'You cannot checkout until you confirm your order' if !confirmed?
 		@shopping_basket.display_basket
 		check_order
-		text_confirmation if confirmed?
+		text_confirmation 
 	end 
 end 
 
-#At checkout:
-# I want to view the shopping shopping_basket
-# Then I want to confirm if shopping basket is correct
-# Then I should receive text confirmation 
 

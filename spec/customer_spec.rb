@@ -40,5 +40,10 @@ require 'customer'
 			takeaway.confirmed?
 			allow(customer).to receive(:send_confirmation_text)
 		end 
+
+		it 'will not checkout if order is not confirmed' do 
+			customer.confirmed? == false 
+			expect{customer.checkout}.to raise_error(RuntimeError)
+		end 
 	end
 end 
