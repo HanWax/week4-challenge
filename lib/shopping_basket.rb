@@ -19,10 +19,19 @@ class ShoppingBasket
 	end 
 
 	def add(dish)
-		dishes << dish
+		dishes << dish	
 	end 
 
+	def remove(dish)
+		raise 'There are no dishes to remove' if dishes.empty?
+		dishes.delete(dish)
+	end 
+
+	def display_basket
+	  	dishes.map {|dish| dish.display_dish}
+	end
+
 	def total_price
-		dishes.map {|dish| dish.price}.flatten.inject(:+)
+		dishes.map {|dish| dish.quantity * dish.price}.flatten.inject(:+)
 	end 
 end 

@@ -12,6 +12,11 @@ class Menu
 		menu_list << dish
 	end 
 
+	def remove_from_menu(dish)
+		raise 'There are no dishes here' if menu_list.empty? 
+		menu_list.delete(dish)
+	end 
+
 	def display_menu
 	  	menu_list.map {|dish| dish.display_dish}
 	end

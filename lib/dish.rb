@@ -1,10 +1,13 @@
 class Dish
 
-attr_accessor :name, :price 
+	DEFAULT_QUANTITY = 1
 
-	def initialize(name, price)
+attr_accessor :name, :price, :quantity 
+
+	def initialize(name, price, quantity = DEFAULT_QUANTITY)
 		@name = name
 		@price = price
+		@quantity = quantity
 	end 
 
 	def display_dish
