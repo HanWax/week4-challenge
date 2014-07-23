@@ -2,9 +2,9 @@ require 'shopping_basket'
 
 describe ShoppingBasket do 
 
-	let(:shopping_basket) {ShoppingBasket.new}
-	let(:pizza) {Dish.new('pizza', 4, 2)}
-	let(:pasta) {Dish.new('pasta', 3, 2)}
+	let(:shopping_basket) {ShoppingBasket.new     }    
+	let(:pizza)           {Dish.new('pizza', 4, 2)}
+	let(:pasta)           {Dish.new('pasta', 3, 2)}
 
 	context 'upon initialisation' do 
 

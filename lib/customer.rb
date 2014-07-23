@@ -30,17 +30,15 @@ class Customer
 	end
 
 	def text_confirmation
-		send_confirmation_text(self, message_body) if confirmed? 
+		send_confirmation_text(self, message_body) 
 	end
 
 	def message_body
-		"Your order ID number is: #{order_id}. Your order will be on it's way shortly."
+		"Hi #{self.name}! Thanks for ordering with us today. Your order ID number is: #{order_id}. Your order will be with you by 18:52."
 	end 
 
 	def checkout
 		raise 'You cannot checkout until you confirm your order' if !confirmed?
-		@shopping_basket.display_basket
-		check_order
 		text_confirmation 
 	end 
 end 
