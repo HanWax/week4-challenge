@@ -13,4 +13,8 @@ attr_accessor :name, :price, :quantity
 	def display_dish
 	  	return "#{@name.capitalize} £#{@price}"
 	end
+
+	def display_name
+		@name 
+	end 
 end 

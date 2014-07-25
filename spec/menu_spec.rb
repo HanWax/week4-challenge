@@ -2,17 +2,16 @@ require 'menu'
 
 	describe Menu do 
 		
-		let(:menu) {Menu.new}
+		let(:menu)  {Menu.new               }
 		let(:pizza) {Dish.new('pizza', 6, 1)}
 		let(:pasta) {Dish.new('pasta', 7, 1)}
-		let(:tuna) {Dish.new('tuna', 8, 1)}
+		let(:tuna)  {Dish.new('tuna', 8, 1) }
 
 	context 'upon initialisation' do 
 
 		it 'should contain an empty menu list upon initialisation' do 
 			expect(menu.menu_list).to be_empty
-		end 
-
+		end
 	end
 
 	context 'adding and removing dishes' do 
@@ -34,20 +33,19 @@ require 'menu'
 
 		it 'should be able to contain more than one dish' do 
 			menu.add_to_menu(pizza)
-			menu.add_to_menu(pasta)
+			menu.add_to_menu(pizza)
 			expect(menu.menu_list.length).to eq 2
 		end 
 	end 
 
 	context 'displaying' do 
 
-		it 'should be able to display the menu' do 
+		it 'should be able to display' do
 			menu.add_to_menu(pizza)
 			menu.add_to_menu(pasta)
 			menu.add_to_menu(tuna)
-			expect(menu.display_menu).to eq ['Pizza' + " " + '£6', 'Pasta' + " " + '£7', 'Tuna' + " " + '£8' ]
-		end 
-
+			expect(menu.display_menu).to eq ['Pizza' + " " + '£6', 'Pasta' + " " + '£7','Tuna' + " " + '£8' ]
+		end
 	end
 end
  

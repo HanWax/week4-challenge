@@ -16,16 +16,13 @@ let(:dish) {Dish.new('Pizza', 5, 2)}
 		it 'should be initialised with a quantity' do 
 			expect(dish.quantity).to eq 2
 		end 
-
 	end 
 
 	context 'display' do 
 
 		it 'should be displayed nicely' do 
 			expect(dish.display_dish).to eq 'Pizza' + " " + '£5'
-			
 		end 
-
 	end
 end 
 

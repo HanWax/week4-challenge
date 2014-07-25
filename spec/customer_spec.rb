@@ -3,7 +3,7 @@ require 'customer'
 	describe Customer do 
 
 		let(:customer)        {Customer.new('Hannah', "+447988044884")  }
-		let(:shopping_basket) {ShoppingBasket.new                       }
+		let(:basket)          {ShoppingBasket.new                       }
 		let(:takeaway)        {double :takeaway, confirmed?: true       }
 
 	context 'upon initialisation' do 
@@ -24,26 +24,5 @@ require 'customer'
 			allow(customer).to receive(:order_id).with(:rand).and_return(10000..20000)
 		end
 
-	end
-
-	context 'confirming the order' do 
-
-		it 'should confirm order and price with customer' do 
-			allow(customer.check_order).to receive(:puts)
-		end 
-
-		it 'should be confirmed by the customer' do 
-			expect(takeaway).to be_confirmed
-		end 
-
-		it 'should send a confirmation text' do 
-			takeaway.confirmed?
-			allow(customer).to receive(:send_confirmation_text)
-		end 
-
-		it 'will not checkout if order is not confirmed' do 
-			customer.confirmed? == false 
-			expect{customer.checkout}.to raise_error(RuntimeError)
-		end 
 	end
 end 

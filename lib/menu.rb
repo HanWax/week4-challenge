@@ -18,6 +18,7 @@ class Menu
 	end 
 
 	def display_menu
-	  	menu_list.map {|dish| dish.display_dish}
+	  	menu_list.map {|dish| "#{dish.name.capitalize}" + " " + "£#{dish.price}"}
 	end
-end
+end 
+
